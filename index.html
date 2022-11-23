@@ -9,13 +9,18 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="initGame()" onkeyup="movePacman(event)">
+<body onload="initGame()" oncontextmenu="return false">
     <h1 style="color: blue ;">Mine Sweeper</h1>
+    <p class ="myTimer"> 
+        000
+    </p>
     <div>
-        <h2>Score: <span>0</span></h2>
+        <h2 class="txtMinesOnBoard">Mains left: <span>0</span></h2>
+        <h2 class="txtCellCount">Cell to win: <span>0</span></h2>
     </div>
+    
     <div class="board-container">
-
+        
     </div>
 
 
