@@ -1,0 +1,28 @@
+body{
+  
+  align-items: center;
+  text-align: center;
+}
+
+.board-container table{
+  margin: auto;
+  border: 1px solid;
+}
+
+.cell:hover{
+  /* color: rgb(47, 190, 190); */
+  background-color: rgb(181, 179, 179);
+}
+
+.shown{
+  background-color: rgba(181, 179, 179, 0.5);
+}
+
+
+table, th, td {
+  border: 1px solid;
+}
+td{
+  width: 40px;
+  height: 40px;
+}
