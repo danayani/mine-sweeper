@@ -29,10 +29,11 @@ function renderBoard(mat = gBoard, selector = '.board-container') {
     elContainer.innerHTML = strHTML
 
     const eltxtMines = document.querySelector('.txtMinesOnBoard span')// update Mains left
-    eltxtMines.innerText = gMinesOnBoard
+    eltxtMines.innerText = gLevel.MINES
+
 
     const eltxtCellCount = document.querySelector('.txtCellCount span')// update empty cell to open
-    eltxtCellCount.innerText = gCellCount
+    eltxtCellCount.innerText = gGame.shownCount
 
     checkWin()
 
@@ -52,11 +53,11 @@ function countMinesNegs(cellI, cellJ, mat) {
     return negsCount
 }
 
-//not working at the moment
-function renderCell(location, value) {
-    const cellSelector = '.' + getClassName(location) // cell-i-j
-    const elCell = document.querySelector(cellSelector)
-    elCell.innerHTML = value
+//value = innerText
+function renderElement(classElement, value) {
+    const classV = '.' + classElement  
+    const elClass = document.querySelector(classV)
+    elClass.innerText = value
 
 }
 
@@ -79,7 +80,7 @@ function getEmptyRamdomCell() {
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard.length; j++) {
             var curr = gBoard[i][j]
-            if (!curr.isMine) emptyCells.push({ i: i, j: j })
+            if (!curr.isMine && !curr.isShown) emptyCells.push({ i: i, j: j })
         }
     }
 
@@ -88,11 +89,11 @@ function getEmptyRamdomCell() {
 }
 
 function myTimer(){
-    if(gTimer > 5000) gameOver(false)
-    gTimer++
+    if(gGame.secsPassed > 5000) gameOver(false)
+    gGame.secsPassed++
 
     const eltxtMyTimer = document.querySelector('.myTimer')// update myTimer
-    eltxtMyTimer.innerText = gTimer
+    eltxtMyTimer.innerText = gGame.secsPassed
 }
 
 

@@ -10,22 +10,38 @@
 </head>
 
 <body onload="initGame()" oncontextmenu="return false">
-    <h1 style="color: blue ;">Mine Sweeper</h1>
-    <p class ="myTimer"> 
-        000
-    </p>
-    <div>
-        <h2 class="txtMinesOnBoard">Mains left: <span>0</span></h2>
-        <h2 class="txtCellCount">Cell to win: <span>0</span></h2>
+    <div class="logo">
+        <img src="img/logo.png" alt="Mine Sweeper" width="375" height="150">
     </div>
-    
-    <div class="board-container">
+    <div class="status">
+        <h3 class="statusInner lives">♥ </h3>
+        <h3 class="statusInner myTimer">
+            000
+        </h3>
+        <h3 class="statusInner txtMinesOnBoard">Mains left: <span>0</span></h3>
+        <h3 class="statusInner txtCellCount">Cell to win: <span>0</span></h3>
         
     </div>
 
+    <div class="boxLevel">
+        <button class="level 1" onclick="onLevelChange(1)">Beginners</button>
+        <button class="level 2" onclick="onLevelChange(2)">Professionals</button>
+        <button class="level 3" onclick="onLevelChange(3)">Extremes</button>
+    </div>
+
+    <button class="startBtn" onclick="onStartBtn()"> </button>
+
+    <div class="game">
+        <table class="board-container"></table>
+        
+
+    </div>
+
+    <footer>
+        <p>Ⓒ Dana Yaniv</p>
+    </footer>
 
     <script src="js/utils.js"></script>
-    <script src="js/player.js"></script>
     <script src="js/mines.js"></script>
     <script src="js/game.js"></script>
 </body>
